@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## To calculate the inverse of the matrix and also allow cache process through the enviroment 
 
-## Write a short comment describing this function
+
+## This function takes the matrix value and and has getters and setter for for the matrix value
+#and its inverse value as a result
+# This basically has a list of functions(setters and getters) to the matrix values
+
+# The actual inverse function logic is built in the next function 
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -18,7 +22,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function is the one that gets called intially
+# It first checks if the variable evalauted for the inverse is available through getInverse
+# in the cache/environment. if yes it would retrieve/get returned from the cache. 
+# if its not available then it gets the value of the matix and passes the same t solve 
+# function to find the inverse of it and assign it to the result that gets returned as m 
+# x is the reference to function makeCacheMatrix
 
 cacheSolve <- function(x, ...) {
   m <- x$getInverse()
